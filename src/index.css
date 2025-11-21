@@ -10,7 +10,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg, #1e1e2f 0%, #3b1a5a 100%);
+  background: linear-gradient(180deg, #2d2d44 0%, #3b1a5a 100%);
   color: #ffffff;
   overflow-x: hidden;
   min-height: 100vh;
@@ -34,7 +34,7 @@ html {
 /* Header */
 header {
   background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   text-align: center;
   position: sticky;
   top: 0;
@@ -46,7 +46,7 @@ header {
 }
 
 header.scrolled {
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   background: rgba(30, 30, 47, 0.5);
 }
 
@@ -1027,6 +1027,12 @@ body.dark-mode footer {
   to { transform: translateY(0); opacity: 1; }
 }
 
+
+
+
+
+
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   header h1 { font-size: 2.5rem; }
@@ -1046,6 +1052,8 @@ body.dark-mode footer {
     right: 1.5rem;
   }
 }
+
+
 
 @media (max-width: 768px) {
   header { padding: 2rem 1rem; }
@@ -1124,11 +1132,46 @@ body.dark-mode footer {
   }
 }
 
+
+
+
+
 @media (max-width: 480px) {
   header h1 { font-size: 1.8rem; }
   section h2 { font-size: 1.8rem; }
+  nav a { margin: 0 0.5rem; font-size: 0.8rem; }
   #contact h2 { font-size: 1.8rem; }
   #contact p { font-size: 1rem; }
+
+  header {
+  padding: 0.5rem 2rem;
+  }
+  
+  header p {
+  font-size: 1rem;
+  }
+  
+  header.scrolled {
+  padding: 0.5rem 2rem;
+ 
+  }
+
+  header.scrolled p {
+    font-size: 0.8rem;
+    margin: 0.1rem 0;
+
+  }
+
+  header.scrolled h1 {
+    font-size: 1.7rem;
+  }
+
+  header.scrolled nav a {
+    margin: 0 0.1rem;
+    font-size: 0.6rem;
+  }
+
+
   .social-icon {
     width: 36px;
     height: 36px;
@@ -1161,4 +1204,38 @@ body.dark-mode footer {
     top: 1rem;
     right: 1rem;
   }
+
+  .about-text p {
+  font-size: 0.8rem;
+  margin-bottom: 0.1rem;
+  text-align: justify;
+  }
+
+  .edu-card h3 {
+  font-size: 1rem;
+  
+  }
+
+  .edu-card p {
+    font-size: 0.8rem;
+  }
+
+  .timeline-content li {
+  font-size: 0.8rem;
+  }
+  .timeline-content p {
+    font-size: 0.9rem;
+  }
+
+  .cert-card h3 {
+  font-size: 1.3rem;
+  }
+  
+  .cert-card p  {
+  font-size: 0.8rem;
+  }
+
+
+  
+
 }
