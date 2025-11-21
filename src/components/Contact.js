@@ -5,6 +5,7 @@ import { FaInstagram, FaLinkedin, FaGithub, FaWhatsapp, FaFacebook } from 'react
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [showPopup, setShowPopup] = useState(false); // ← NEW
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,8 +29,12 @@ const Contact = () => {
       (response) => {
         console.log('SUCCESS!', response.status, response.text);
         setMessage('Message sent successfully!');
+        setShowPopup(true);                    // ← Show popup
         setIsLoading(false);
         form.reset();
+
+        // Auto hide popup after 4 seconds
+        setTimeout(() => setShowPopup(false), 4000);
       },
       (error) => {
         console.log('FAILED...', error);
@@ -38,6 +43,9 @@ const Contact = () => {
       }
     );
   };
+
+  // Close popup when clicking outside or the × button
+  const closePopup = () => setShowPopup(false);
 
   return (
     <section id="contact" data-aos="fade-up">
@@ -50,9 +58,22 @@ const Contact = () => {
           {isLoading ? 'Sending...' : 'Send Message'}
         </button>
       </form>
-      {message && (
+      {message && !showPopup && (
         <p style={{ color: message.includes('Failed') ? '#ff6b6b' : '#4ecdc4' }}>{message}</p>
       )}
+
+      {/* Popup Toast */}
+      {showPopup && (
+        <div className="popup-toast">
+          <div className="popup-content">
+            <span>Message sent successfully!</span>
+            <button onClick={closePopup} className="popup-close">
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+
       <p>
         Or email me at:{' '}
         <a href="mailto:sadcprasad99@gmail.com">
