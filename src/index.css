@@ -1133,7 +1133,7 @@ body.dark-mode footer {
 }
 
 @media (max-width: 360px){
-  header {
+  header p {
 font-size: 2rem;
   }
 }
